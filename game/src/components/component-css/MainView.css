@@ -2,6 +2,16 @@ body{
     background-color: linen;
 }
 
-outer-box{
+.outer-box{
     background-color: lightblue;
+    display: flex;
+    flex-direction: row;
+}
+
+.left-panel{
+    width: 50%;
+}
+
+.right-panel{
+    width: 50%;
 }

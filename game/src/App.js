@@ -1,13 +1,14 @@
 import React from 'react';
-import {BrowserRouter as Router, Link, Switch} from 'react-router-dom';
+import {Route, Link, Switch} from 'react-router-dom';
 import MainView from './components/MainView';
-import logo from './logo.svg';
 import './App.css';
+import Register from './components/Register';
 
 function App() {
   return (
     <div className="App">
-      <MainView />
+      <Route path="/register" component={Register}/>
+      <Route path='/mainview' component={MainView} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Controls{
+export default function Controls(){
     return(
         <div>
             

@@ -12,6 +12,7 @@
 
 .label{
     color: black;
+    margin-top: 0;
 }
 
 .row{
@@ -30,10 +31,17 @@
 
 .hidden{
     background-color: rgba(56, 56, 56, 0.2);
+    border: 1px solid rgba(56, 56, 56, 0.2);
 }
 
 .visible{
-    background-color: coral;
+    background-color: rgba(129, 0, 0, 0.2);
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.active{
+    background-color: darkred;
     border: 1px solid black;
     border-radius: 5px;
 }

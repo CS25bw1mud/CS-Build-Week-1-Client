@@ -24,7 +24,7 @@ const Login = (props) => {
         .post('', login) // login endpoint goes here
         .then(res => {
             localStorage.setItem('token', res.data.payload);
-            props.history.push() // whatever route we want to go to
+            props.history.push('/mainview') // whatever route we want to go to
         }) 
     };
     return (

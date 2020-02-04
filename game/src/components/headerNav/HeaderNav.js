@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink, Link} from 'react-router-dom'
-import '../component-css/Header.css'
+import './HeaderNav.css'
 
 
 const HeaderNav = () => {

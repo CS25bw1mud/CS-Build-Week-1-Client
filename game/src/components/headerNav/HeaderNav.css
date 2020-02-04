@@ -1,0 +1,12 @@
+.header{
+    background-color: black;
+    height: 3rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+a{
+    text-decoration: none;
+    margin: 1rem 1rem;
+    color: white;
+}

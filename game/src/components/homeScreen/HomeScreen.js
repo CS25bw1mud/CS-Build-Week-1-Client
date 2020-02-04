@@ -1,5 +1,6 @@
 import React from 'react'
 import {Route} from 'react-router-dom'
+import './HomeScreen.css';
 
 function HomeScreen(props) {
 
@@ -14,13 +15,19 @@ function HomeScreen(props) {
     }
 
     return (
-        <div>
-            <div>
-                <h1>LOCK ENTERPRISES</h1>
-                <button onClick={goToRegister}>SignUp</button>
-                <button onClick={goToLogin}>Login</button>
+        
+            <div class="home-outer">
+                <div class="upper">
+                    <p class="intro"><em>Lock Enterprises presents...</em></p>
+                    <h1>TITLE TK ADVENTURE</h1>
+                    <h2>A world of abject horror awaits!<br/>Please choose an option below.</h2>
+                </div>
+                <div class="buttons">
+                    <div class="btn" onClick={goToRegister}><p class="btn-text">Register</p></div>
+                    <div class="btn" onClick={goToLogin}><p class="btn-text">Login</p></div>
+                </div>
             </div>
-        </div>
+        
     )
 }
 

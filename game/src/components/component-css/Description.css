@@ -1,0 +1,29 @@
+strong{
+    font-weight: bold;
+}
+
+.desc{
+    width: 70%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px black solid;
+    border-radius: 5px;
+    margin: 2rem auto;
+}
+
+.room{
+    margin: 0;
+}
+
+.currentroom{
+    margin: 0;
+    color: grey;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.details{
+    color: darkred;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,26 @@
+form{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    height: 2rem;
+    background-color: linen;
+    border: 1px darkred solid;
+    border-radius: 5px;
+    width: 25%;
+    margin: .1rem auto;
+    font-size: 1.4rem;
+}
+
+button{
+    width: 25%;
+    margin: 1rem auto;
+    height: 2rem;   
+    font-size: 1.4rem;
+}
+
+.reg-title{
+    margin: 2rem;
+}

@@ -9,8 +9,7 @@ export default function MainView(){
     return(
         <>
         <div class="header">
-        <h1>Welcome to Lock Enterprises</h1>
-        <p>We make games, on the internet</p>
+        <h1 class="maptitle">ADVENTURE</h1>
         </div>
         <div class = "outer-box">
             <div class="left-panel">

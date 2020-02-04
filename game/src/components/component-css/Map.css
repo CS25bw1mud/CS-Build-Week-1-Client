@@ -40,7 +40,7 @@
     border-radius: 5px;
 }
 
-.active{
+.current{
     background-color: darkred;
     border: 1px solid black;
     border-radius: 5px;

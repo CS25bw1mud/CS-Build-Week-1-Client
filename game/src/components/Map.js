@@ -22,7 +22,7 @@ export default function Map(){
             <div class="row">
                 <div class="box hidden"></div>
                 <div class="box visible"></div>
-                <div class="box active"></div>
+                <div class="box current"></div>
                 <div class="box hidden"></div>
                 <div class="box hidden"></div>
             </div>

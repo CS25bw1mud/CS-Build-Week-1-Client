@@ -17,9 +17,11 @@ function HomeScreen(props) {
     return (
         
             <div class="home-outer">
-                <p class="intro"><em>Lock Enterprises presents...</em></p>
-                <h1>TITLE TK ADVENTURE</h1>
-                <h2>A world of abject horror awaits!<br/>Please choose an option below.</h2>
+                <div class="upper">
+                    <p class="intro"><em>Lock Enterprises presents...</em></p>
+                    <h1>TITLE TK ADVENTURE</h1>
+                    <h2>A world of abject horror awaits!<br/>Please choose an option below.</h2>
+                </div>
                 <div class="buttons">
                     <div class="btn" onClick={goToRegister}><p class="btn-text">Register</p></div>
                     <div class="btn" onClick={goToLogin}><p class="btn-text">Login</p></div>

@@ -5,6 +5,10 @@
     
 }
 
+.upper{
+    
+}
+
 .btn{
     display: flex;
     flex-direction: row;
@@ -26,7 +30,7 @@ p{
 }
 
 .intro{
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .buttons{

@@ -7,7 +7,7 @@ import Tree from 'react-d3-tree';
 import { getData } from "../store/actions";
 import { connect } from 'react-redux'
 
-function Map() {
+function Map({ data, isFetching, error, getData }) {
 
     useEffect(() => {
         getData();
@@ -350,21 +350,23 @@ const mapData = [{
   }
 ]
 
+console.log('DATA', data)
+
 return(
     <div>
         <Tree data={mapData}/>
     </div>
-)
+);
 
 }
 
-// const mapStateToProps = state => {
-//     return {
-//         data: state.data,
-//         isFetching: state.isFetching,
-//         error: ''
-//     }
-// }
+const mapStateToProps = state => {
+    return {
+        data: state.data,
+        isFetching: state.isFetching,
+        error: state.error
+    }
+}
 
-// export default connect(mapStateToProps, {getData})(Map);
-export default Map
+export default connect(mapStateToProps, {getData})(Map);
+// export default Map

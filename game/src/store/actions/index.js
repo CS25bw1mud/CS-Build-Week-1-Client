@@ -9,7 +9,7 @@ export const getData = () => {
     dispatch({ type: FETCH_DATA_START})
     axios.get("https://cs25-lock-industry-dev.herokuapp.com/api/adv/map")
         .then(response => {
-            console.log(Object.values(response.data))
+            // console.log(Object.values(response.data))
             const roomData = Object.values(response.data)
             dispatch({ type: FETCH_DATA_SUCCESS, payload: roomData})
         })

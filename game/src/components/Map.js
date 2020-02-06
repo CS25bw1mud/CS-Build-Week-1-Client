@@ -1,17 +1,16 @@
 import React, {useState, useEffect} from "react";
 import './component-css/Map.css';
-// import Graph from 'reactjs-graphs'
-// import * as d3 from 'd3';
-// import rd3 from 'react-d3-library';
-import Tree from 'react-d3-tree';
 import { getData } from "../store/actions";
 import { connect } from 'react-redux'
+import { XYPlot, XAxis, YAxis, HorizontalGridLines, LineSeries, AreaSeries, MarkSeries, HexbinSeries } from 'react-vis';
 
 function Map({ data, isFetching, error, getData }) {
 
     useEffect(() => {
         getData();
     }, [getData]);
+
+
 
 const mapData = [{
     "Java Build": {
@@ -353,8 +352,117 @@ const mapData = [{
 console.log('DATA', data)
 
 return(
-    <div>
-        <Tree data={mapData}/>
+    <div class="map-border">
+        <XYPlot
+        width={400}
+        height={400}>
+        <HorizontalGridLines />
+        <MarkSeries
+        color="darkred"
+        data={[
+          //orientation
+          {x: 0, y: 0},
+          //web
+          {x: 0, y: 1},
+          {x: 0, y: 2},
+          {x: 0, y: 3},
+          {x: 0, y: 4},
+          {x: 0, y: 5},
+          {x: 0, y: 6},
+          {x: 0, y: 7},
+          {x: 0, y: 8},
+          {x: 0, y: 9},
+          {x: 0, y: 10},
+          //node
+          {x: -1, y: 10},
+          {x: -1, y: 11},
+          {x: -1, y: 12},
+          {x: -1, y: 13},
+          //java
+          {x: 1, y: 10},
+          {x: 1, y: 11},
+          {x: 1, y: 12},
+          {x: 1, y: 13},
+          //web reuntion
+          {x: 0, y: 13},
+          {x: 0, y: 14},
+
+
+
+
+
+          // data science plot
+          {x: -1, y: 0},
+          {x: -2, y: 0},
+          {x: -2, y: 1},
+          {x: -2, y: 2},
+          {x: -2, y: 3},
+          {x: -2, y: 4},
+          {x: -2, y: 5},
+          {x: -2, y: 6},
+          {x: -2, y: 7},
+          {x: -2, y: 8},
+          {x: -2, y: 9},
+          {x: -2, y: 10},
+          {x: -2, y: 11},
+          {x: -2, y: 12},
+          {x: -2, y: 13},
+          {x: -2, y: 14},
+          {x: -1, y: 14},
+          
+          // ux plot
+          {x: 0, y: -1},
+          {x: 0, y: -2},
+          {x: 0, y: -3},
+          {x: 0, y: -4},
+          {x: 0, y: -5},
+          {x: 0, y: -6},
+          {x: 0, y: -7},
+          {x: 0, y: -8},
+          {x: 0, y: -9},
+          {x: 0, y: -10},
+          {x: 0, y: -11},
+          {x: 0, y: -12},
+          {x: 0, y: -13},
+          {x: 0, y: -14},
+          {x: 0, y: -15},
+          {x: 0, y: -16},
+          {x: 0, y: -17},
+          {x: 0, y: -18},
+          {x: 0, y: -19},
+          {x: 0, y: -20},
+          
+
+          {x: 1, y: 0},
+          {x: 2, y: 0},
+          {x: 2, y: 1},
+          {x: 2, y: 2},
+          {x: 2, y: 3},
+          {x: 2, y: 4},
+          {x: 2, y: 5},
+          {x: 2, y: 6},
+          {x: 2, y: 7},
+          {x: 2, y: 8},
+          {x: 2, y: 9},
+          {x: 2, y: 10},
+          {x: 2, y: 11},
+          {x: 2, y: 12},
+          {x: 2, y: 13},
+          {x: 2, y: 14},
+          {x: 1, y: 14}
+
+
+
+
+
+
+
+
+
+        ]}/>
+      <XAxis />
+      <YAxis />
+      </XYPlot>
     </div>
 );
 

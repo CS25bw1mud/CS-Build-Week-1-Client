@@ -1,5 +1,6 @@
 .map-border{
-    width: 50%;
+    width: 80%;
+    height: 75%;
     margin: 2rem auto;
     display: flex;
     flex-direction: column;

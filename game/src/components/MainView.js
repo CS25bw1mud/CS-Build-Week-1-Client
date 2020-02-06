@@ -8,14 +8,14 @@ import './component-css/MainView.css';
 export default function MainView(){
     return(
         <>
-        <div class="header">
-        <h1 class="maptitle">ADVENTURE</h1>
+        <div className="header">
+        <h1 className="maptitle">ADVENTURE</h1>
         </div>
-        <div class = "outer-box">
-            <div class="left-panel">
+        <div className = "outer-box">
+            <div className="left-panel">
                 <Map />
             </div>
-            <div class="right-panel">
+            <div className="right-panel">
                 <Description />
                 <Controls />
             </div>

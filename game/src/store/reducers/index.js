@@ -1,4 +1,5 @@
 import { FETCH_DATA_START, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE } from '../actions';
+import { FETCH_GAMEINFO_START, FETCH_GAMEINFO_SUCCESS, FETCH_GAMEINFO_FAILURE } from '../actions';
 
 const initialState = {
 	data: [ 
@@ -33,6 +34,25 @@ export const reducer = (state = initialState, action) => {
 				isFetching: false,
 				error: action.payload
 			};
+		case FETCH_GAMEINFO_START:
+			return {
+				...state,
+				isFetching: true,
+				error: ''
+			};
+		case FETCH_GAMEINFO_SUCCESS:
+			return {
+				...state,
+				isFetching: false,
+				data: action.payload,
+				error: ''
+			};
+		case FETCH_GAMEINFO_FAILURE:
+			return {
+				...state,
+				isFetching: false,
+				errror: action.payload
+			}
 		default:
 			return state;
 	}

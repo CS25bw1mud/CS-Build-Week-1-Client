@@ -6,7 +6,7 @@ body{
     background-color: lightblue;
     display: flex;
     flex-direction: row;
-    height: 30rem;
+    
 }
 
 .left-panel{

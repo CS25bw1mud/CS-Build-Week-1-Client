@@ -572,8 +572,7 @@ return(
 
 
         ]}/>
-      <XAxis />
-      <YAxis />
+      
       </XYPlot>
     </div>
 );

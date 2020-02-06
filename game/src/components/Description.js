@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect} from "react";
 import './component-css/Description.css';
+import { connect } from "react-redux";
+import { getGameInfo } from "../store/actions/index.js";
 
+// export default function Description({ getGameInfo, gameData}){
 export default function Description(){
+
     return(
         <div className="desc">
             <h1 className="room">Palace Gates</h1>
@@ -10,3 +14,12 @@ export default function Description(){
         </div>
     )
 }
+
+// const mapStateToProps = state => {
+//     return {
+//         gameData: state,
+//         error: ""
+//     }
+// }
+
+// export default connect (mapStateToProps, {getGameInfo})(Description)

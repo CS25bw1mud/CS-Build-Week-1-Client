@@ -4,13 +4,15 @@ import { connect } from "react-redux";
 import { getGameInfo } from "../store/actions/index.js";
 
 // export default function Description({ getGameInfo, gameData}){
-function Description({getGameInfo, gameData}){
+function Description({getGameInfo, gameData, initInfo}){
 
     return(
         <div className="desc">
-            <h1 className="room">{gameData.data.title}</h1>
+            <h1 className="room">{initInfo.title}</h1>
             <h2 className="currentroom">Current Room</h2>
-    <p className="details">{}</p>
+            <p className="details">{initInfo.description}</p>
+            <p>Players with you: {initInfo.players}</p>
+            <p> You cannot move that way!: {} </p>
         </div>
     )
 }
@@ -18,6 +20,7 @@ function Description({getGameInfo, gameData}){
 const mapStateToProps = state => {
     return {
         gameData: state,
+        initInfo: state.initInfo,
         error: ""
     }
 }

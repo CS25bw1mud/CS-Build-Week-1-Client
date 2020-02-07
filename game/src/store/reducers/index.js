@@ -6,7 +6,7 @@ import { FETCH_INIT_START, FETCH_INIT_SUCCESS,  FETCH_INIT_FAILURE } from '../ac
 
 const initialState = {
 	data: [ ],
-	initInfo: {},
+	initInfo: [],
 	isFetching: false,
 	error: ''
 };

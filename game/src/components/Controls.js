@@ -2,13 +2,14 @@ import React, { useEffect, useState} from "react";
 import { connect } from "react-redux";
 import { getGameInfo } from "../store/actions/index.js";
 import { axiosWithAuth } from '../utils/axiosWithAuth';
-function Controls(props){
+
+function Controls({getGameData, initData}){
 // export default function Controls(){
     const [tracker, setTracker] = useState({})
     useEffect(() => {
         getGameInfo();
         }, [getGameInfo]);
-        console.log("Controls", props.gameData)
+        console.log("Controls", initData)
 
     const movePlayer = (input) => {
         axiosWithAuth()
@@ -33,7 +34,7 @@ function Controls(props){
 }
 const mapStateToProps = state => {
     return {
-        gameData: state,
+        initData: state.initData,
         error: ""
     }
 }

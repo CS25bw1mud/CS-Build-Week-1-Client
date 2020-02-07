@@ -12,7 +12,7 @@ function Description({getGameInfo, gameData, initInfo}){
             <h2 className="currentroom">Current Room</h2>
             <p className="details">{initInfo.description}</p>
             <p>Players with you: {initInfo.players}</p>
-            <p> You cannot move that way!: {} </p>
+            {/* <p> You cannot move that way!: {} </p> */}
         </div>
     )
 }

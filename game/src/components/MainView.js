@@ -1,21 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { getInit } from "../store/actions/index.js";
 import Description from './Description';
 import Controls from './Controls';
 import Map from './Map';
 import './component-css/MainView.css';
 
 
-export default function MainView(){
+    
+
+export function MainView({gameData, getInit}){
+
+    useEffect((props) => {
+        getInit();
+        }, [getInit]);
+        
+        console.log("GAMEDATA!!!!!!!", gameData)
     return(
         <>
-        <div class="header">
-        <h1 class="maptitle">ADVENTURE</h1>
+        <div className="header">
+        <h1 className="maptitle">ADVENTURE</h1>
         </div>
-        <div class = "outer-box">
-            <div class="left-panel">
+        <div className = "outer-box">
+            <div className="left-panel">
                 <Map />
             </div>
-            <div class="right-panel">
+            <div className="right-panel">
                 <Description />
                 <Controls />
             </div>
@@ -23,3 +33,10 @@ export default function MainView(){
         </>
     )
 }
+const mapStateToProps = state => {
+    return {
+        gameData: state,
+        error: ""
+    }
+}
+export default connect (mapStateToProps, {getInit})(MainView)

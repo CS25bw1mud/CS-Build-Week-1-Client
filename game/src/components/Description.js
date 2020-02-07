@@ -1,12 +1,28 @@
 import React from "react";
 import './component-css/Description.css';
+import { connect } from "react-redux";
+import { getGameInfo } from "../store/actions/index.js";
 
-export default function Description(){
+// export default function Description({ getGameInfo, gameData}){
+function Description({getGameInfo, gameData, initInfo}){
+
     return(
-        <div class="desc">
-            <h1 class="room">Palace Gates</h1>
-            <h2 class="currentroom">Current Room</h2>
-            <p class="details">You are standing in front of a very old, very ornate palace. The <strong>King</strong> and <strong>Queen</strong> live here with their socially stunted son, <strong>Prince Derek</strong>.</p>
+        <div className="desc">
+            <h1 className="room">{initInfo.title}</h1>
+            <h2 className="currentroom">Current Room</h2>
+            <p className="details">{initInfo.description}</p>
+            <p>Players with you: {initInfo.players}</p>
+            <p> You cannot move that way!: {} </p>
         </div>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        gameData: state,
+        initInfo: state.initInfo,
+        error: ""
+    }
+}
+
+export default connect (mapStateToProps, {getGameInfo})(Description)

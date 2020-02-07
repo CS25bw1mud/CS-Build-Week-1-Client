@@ -1,7 +1,7 @@
 import React from "react";
 import './component-css/Description.css';
 import { connect } from "react-redux";
-import { getGameInfo } from "../store/actions/index.js";
+import { getGameInfo, getInit } from "../store/actions/index.js";
 
 // export default function Description({ getGameInfo, gameData}){
 function Description({getGameInfo, gameData, initInfo}){
@@ -19,10 +19,10 @@ function Description({getGameInfo, gameData, initInfo}){
 
 const mapStateToProps = state => {
     return {
-        gameData: state,
+        gameData: state.data,
         initInfo: state.initInfo,
         error: ""
     }
 }
 
-export default connect (mapStateToProps, {getGameInfo})(Description)
+export default connect (mapStateToProps, {getGameInfo, getInit})(Description)

@@ -72,10 +72,6 @@ export const reducer = (state = initialState, action) => {
 				isFetching: false,
 				errror: action.payload
 			}
-
-
-
-
 			
 		default:
 			return state;

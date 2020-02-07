@@ -24,9 +24,9 @@ const Login = (props) => {
         axiosWithAuth()
         .post('https://cs25-lock-industry-dev.herokuapp.com/api/login/', login) // login endpoint goes here
         .then(res => {
-            localStorage.setItem('token', res.data.payload);
+            localStorage.setItem('Token', res.data.key);
             props.history.push('/mainview'); // whatever route we want to go to
-            console.log(res)
+            console.log(' Res' , res)
         }) 
         .catch( res=> {
             console.log("No dice", res);

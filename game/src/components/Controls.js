@@ -1,52 +1,42 @@
 import React, { useEffect, useState} from "react";
 import { connect } from "react-redux";
-import { getGameInfo } from "../store/actions/index.js";
+import { getGameInfo, getInit } from "../store/actions/index.js";
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-function Controls({gameData, getGameInfo}){
+function Controls({getGameData, getInit, initInfo}){
 // export default function Controls(){
-        // const [state, setState] = useState({})
+    const [tracker, setTracker] = useState({})
+    useEffect(() => {
+        getGameInfo();
+        }, [getGameInfo]);
+        console.log("Controls", initInfo)
 
-
-
-    const movePlayer = (direction) => {
-        
-        useEffect(() => {
-            getGameInfo(direction);
-            }, [getGameInfo]);
-            console.log("Controls", gameData)
+    const movePlayer = (input) => {
+        axiosWithAuth()
+        .post('https://cs25-lock-industry-dev.herokuapp.com/api/adv/move/', JSON.parse(JSON.stringify(input)))
+        .then(res => {
+            console.log('dir response', res)
+            setTracker(res.data)
+            getInit()
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
- 
-    // const movePlayer = (direction) => {
-    //         axiosWithAuth()
-    //         .post('https://cs25-lock-industry-dev.herokuapp.com/api/adv/move/', direction)
-    //         .then (res => {
-    //             console.log('setstate', res)
-    //             setState(res.data)
-    //         })
-    //         .catch(err => {
-    //             console.log(err)
-    //         })
-    // }
 
     return(
         <div>
-            <div
-                onClick={() => movePlayer( "n")}    
-            ><p>Press <strong>UP</strong> or <strong>N</strong> to go North.</p></div>
-            <p>Press <strong>LEFT</strong> or <strong>W</strong> to go West.</p>
-            <p>Press <strong>RIGHT</strong> or <strong>E</strong> to go East.</p>
-            <p>Press <strong>DOWN</strong> or <strong>S</strong> to go South.</p>
+            <button onClick={() => movePlayer({"direction": "n"})}>North</button>
+            <button onClick={() => movePlayer({"direction": "s"})}>South</button>
+            <button onClick={() => movePlayer({"direction": "w"})}>West</button>
+            <button onClick={() => movePlayer({"direction": "e"})}>East</button>
         </div>
     )
 }
-
-
 const mapStateToProps = state => {
     return {
-        gameData: state,
+        initInfo: state.initInfo,
         error: ""
     }
 }
-
-export default connect (mapStateToProps, {getGameInfo})(Controls)
+export default connect (mapStateToProps, {getGameInfo, getInit})(Controls)

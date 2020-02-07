@@ -1,12 +1,12 @@
 import { FETCH_DATA_START, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE } from '../actions';
 import { FETCH_GAMEINFO_START, FETCH_GAMEINFO_SUCCESS, FETCH_GAMEINFO_FAILURE } from '../actions';
+import { FETCH_INIT_START, FETCH_INIT_SUCCESS,  FETCH_INIT_FAILURE } from '../actions';
+
+
 
 const initialState = {
-	data: [ 
-        {
-
-        }, 
-    ],
+	data: [ ],
+	initInfo: [],
 	isFetching: false,
 	error: ''
 };
@@ -52,7 +52,27 @@ export const reducer = (state = initialState, action) => {
 				...state,
 				isFetching: false,
 				errror: action.payload
+			};
+		case FETCH_INIT_START:
+			return {
+				...state,
+				isFetching: true,
+				error: ''
+			};
+		case FETCH_INIT_SUCCESS:
+			return {
+				...state,
+				isFetching: false,
+				initInfo: action.payload,
+				error: ''
 			}
+		case FETCH_INIT_FAILURE:
+			return {
+				...state,
+				isFetching: false,
+				errror: action.payload
+			}
+			
 		default:
 			return state;
 	}

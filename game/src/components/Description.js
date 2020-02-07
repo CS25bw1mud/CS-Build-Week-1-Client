@@ -1,25 +1,28 @@
-import React, { useEffect} from "react";
+import React from "react";
 import './component-css/Description.css';
 import { connect } from "react-redux";
-import { getGameInfo } from "../store/actions/index.js";
+import { getGameInfo, getInit } from "../store/actions/index.js";
 
 // export default function Description({ getGameInfo, gameData}){
-export default function Description(){
+function Description({getGameInfo, gameData, initInfo}){
 
     return(
         <div className="desc">
-            <h1 className="room">Palace Gates</h1>
+            <h1 className="room">{initInfo.title}</h1>
             <h2 className="currentroom">Current Room</h2>
-            <p className="details">You are standing in front of a very old, very ornate palace. The <strong>King</strong> and <strong>Queen</strong> live here with their socially stunted son, <strong>Prince Derek</strong>.</p>
+            <p className="details">{initInfo.description}</p>
+            <p>Players with you: {initInfo.players}</p>
+            {/* <p> You cannot move that way!: {} </p> */}
         </div>
     )
 }
 
-// const mapStateToProps = state => {
-//     return {
-//         gameData: state,
-//         error: ""
-//     }
-// }
+const mapStateToProps = state => {
+    return {
+        gameData: state.data,
+        initInfo: state.initInfo,
+        error: ""
+    }
+}
 
-// export default connect (mapStateToProps, {getGameInfo})(Description)
+export default connect (mapStateToProps, {getGameInfo, getInit})(Description)

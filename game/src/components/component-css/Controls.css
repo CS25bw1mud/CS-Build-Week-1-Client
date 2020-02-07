@@ -1,0 +1,10 @@
+.ctrl-border {
+    border: 1px solid saddlebrown;
+}
+
+
+
+.button-outer{
+    display: flex;
+    justify-content: flex-end;
+}

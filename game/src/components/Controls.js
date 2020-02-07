@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getGameInfo, getInit } from "../store/actions/index.js";
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
+
 function Controls({getGameData, getInit, initInfo}){
 // export default function Controls(){
     const [tracker, setTracker] = useState({})
@@ -25,11 +26,18 @@ function Controls({getGameData, getInit, initInfo}){
     }
 
     return(
+        <div class="button-outer">
         <div>
             <button onClick={() => movePlayer({"direction": "n"})}>North</button>
+        </div>
+        <div>
+            <button class="west" onClick={() => movePlayer({"direction": "w"})}>West</button>
+            <button class="east" onClick={() => movePlayer({"direction": "e"})}>East</button>
+        </div>
+        <div>
             <button onClick={() => movePlayer({"direction": "s"})}>South</button>
-            <button onClick={() => movePlayer({"direction": "w"})}>West</button>
-            <button onClick={() => movePlayer({"direction": "e"})}>East</button>
+        </div>
+            
         </div>
     )
 }

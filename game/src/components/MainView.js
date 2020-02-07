@@ -19,7 +19,7 @@ export function MainView({gameData, getInit}){
     return(
         <>
         <div className="header">
-        <h1 className="maptitle">ADVENTURE</h1>
+        <h1 className="maptitle">LAMBDA ADVENTURE</h1>
         </div>
         <div className = "outer-box">
             <div className="left-panel">

@@ -26,7 +26,7 @@ const Register = props => {
         axios
         .post('https://cs25-lock-industry-dev.herokuapp.com/api/registration/', register) // API register endpoint
         .then(res => {
-            localStorage.setItem('token', res.data.payload);
+            localStorage.setItem('Token', res.data.key);
             console.log(res.data.payload)
             props.history.push('/login') // push whereever 
         })
